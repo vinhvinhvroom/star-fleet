@@ -1,0 +1,23 @@
+<h1>Crew Members!</h1>
+
+<h4><%= @success_message ? @success_message : nil %></h4>
+
+<ul>
+
+<%@crew_members.each do |crew_member| %>
+  <li>
+    <ul>
+      <li>
+        <%= crew_member.first_name%>
+      </li>
+      <li>
+        <%= crew_member.last_name%>
+      </li>
+      <li>
+        <%= crew_member.speciality_division%>
+      </li>
+    </ul>
+  </li><br />
+<% end %>
+
+</ul>

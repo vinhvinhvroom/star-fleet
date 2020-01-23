@@ -1,0 +1,39 @@
+<h1><%= @ship.name %></h1><hr />
+
+<h4>Ship Class: <%= @ship.ship_class %></h4><br />
+
+<h4>Location: <%= @ship.location %></h4>
+
+
+<h3><%= @success ? @success : nil  %></h3><hr />
+
+
+<h3>Add a Crew Member to this Ship!</h3>
+<%=  %>
+
+<form action="/starships/<%=@ship.id%>/crew-members/new" method="post">
+
+  <label for="first_name">First Name:</label>
+
+  <span class="error">
+  <%=@new_crew_member ? @new_crew_member.errors.messages[:first_name].last : nil%>
+  </span>
+
+  <input type="text" name="first_name" value="<%=@new_crew_member ? @new_crew_member.first_name : nil%>">
+
+  <label for="last_name">Last Name:</label>
+
+  <span class="error">
+  <%=@new_crew_member ? @new_crew_member.errors.messages[:last_name].last : nil%>
+  </span>
+
+  <input type="text" name="last_name" value="<%=@new_crew_member ? @new_crew_member.last_name : nil%>">
+
+  <label for="speciality_division">Specialty:</label>
+
+  <input type="text" name="speciality_division" value="<%=@new_crew_member ? @new_crew_member.speciality_division : nil%>">
+
+  <input class="button" type="submit" name="" value="Submit">
+
+
+</form>

@@ -1,0 +1,30 @@
+<form action="/starships/new" method="post">
+
+  <label for="name">Name:</label>
+
+  <span class="error">
+    <%= @new_ship ? @new_ship.errors.messages[:name].last : nil %>
+  </span>
+
+  <input type="text" name="name" value="<%= @new_ship ? @new_ship.name: nil %>">
+
+  <label for="ship_class">Ship Class:</label>
+
+  <span class="error">
+    <%= @new_ship ? @new_ship.errors.messages[:ship_class].last : nil %>
+  </span>
+
+  <input type="text" name="ship_class" value="<%= @new_ship ? @new_ship.ship_class: nil %>">
+
+  <label for="location">Location:</label>
+
+  <span class="error">
+    <%= @new_ship ? @new_ship.errors.messages[:location].last : nil %>
+  </span>
+
+  <input type="text" name="location" value="<%= @new_ship ? @new_ship.location: nil %>">
+
+  <input class="button" type="submit" name="" value="Submit">
+
+
+</form>
